@@ -1,0 +1,233 @@
+:root {
+    /* Intense Romantic Palette */
+    --crimson-deep: #400202;
+    --crimson-vibrant: #B30000;
+    --crimson-glow: #F00000;
+    --rose-gold: #D4A373;
+    --silk-white: #FAF9F6;
+    --obsidian: #0A0101;
+    
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-sans: 'Outfit', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--obsidian);
+    color: var(--silk-white);
+    font-family: var(--font-sans);
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 1. Deep Red Atmospheric Background */
+#canvas-experience {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+#overlay-gradient {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Added a deep red radial wash to make the background feel redder */
+    background: radial-gradient(circle at center, rgba(139, 0, 0, 0.15) 0%, var(--obsidian) 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* 2. Hyper-Vibrant Central Heart */
+.pulsing-heart {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 480px;
+    height: 480px;
+    z-index: 2;
+    opacity: 0;
+    fill: var(--crimson-vibrant);
+    /* Massive blooming shadow to make it pop */
+    filter: drop-shadow(0 0 80px var(--crimson-glow));
+    transition: opacity 3s ease;
+}
+
+@keyframes heartbeat {
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.15; filter: drop-shadow(0 0 40px var(--crimson-glow)); }
+    15% { transform: translate(-50%, -50%) scale(1.18); opacity: 0.35; filter: drop-shadow(0 0 100px var(--crimson-glow)); }
+    30% { transform: translate(-50%, -50%) scale(1); opacity: 0.15; filter: drop-shadow(0 0 40px var(--crimson-glow)); }
+    45% { transform: translate(-50%, -50%) scale(1.12); opacity: 0.25; filter: drop-shadow(0 0 70px var(--crimson-glow)); }
+    70% { transform: translate(-50%, -50%) scale(1); opacity: 0.15; filter: drop-shadow(0 0 40px var(--crimson-glow)); }
+}
+
+.pulsing-heart.visible {
+    opacity: 0.25; /* Increased base opacity */
+    animation: heartbeat 2.5s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+/* 3. The Intro Panel - Refined Red Glass */
+.glass-ui {
+    position: relative;
+    z-index: 10;
+    background: rgba(40, 5, 5, 0.45);
+    backdrop-filter: blur(35px);
+    -webkit-backdrop-filter: blur(35px);
+    border: 1px solid rgba(179, 0, 0, 0.3); /* Red-tinted border */
+    border-radius: 4px;
+    padding: 5rem;
+    text-align: center;
+    max-width: 650px;
+    width: 92%;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.9), 0 0 30px rgba(139, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 2.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.glass-ui.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 4. Bold Romantic Typography */
+h1 {
+    font-family: var(--font-serif);
+    font-size: 5rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--silk-white);
+    letter-spacing: 3px;
+    margin-bottom: 2.5rem;
+    line-height: 1.1;
+    text-shadow: 0 0 20px rgba(179, 0, 0, 0.3);
+}
+
+.subtitle {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 12px;
+    color: var(--rose-gold);
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.intro-text {
+    font-size: 1.4rem;
+    font-weight: 200;
+    letter-spacing: 1.5px;
+    color: rgba(250, 249, 246, 0.85);
+    line-height: 2;
+    margin-bottom: 4rem;
+}
+
+/* 5. Poetic Lines */
+#poetry-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.lyric-line {
+    font-family: var(--font-serif);
+    font-size: 4rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--silk-white);
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%) scale(0.95);
+    transition: opacity 2s ease, transform 3s ease;
+    letter-spacing: 2px;
+    text-shadow: 0 0 40px rgba(179, 0, 0, 0.4); /* Red glow on lyrics */
+}
+
+.lyric-line.active {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+}
+
+/* 6. Action Button */
+.btn-primary {
+    background: transparent;
+    border: 1px solid var(--crimson-vibrant);
+    color: var(--silk-white);
+    padding: 1.2rem 4rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    cursor: pointer;
+    transition: all 0.6s ease;
+    background: rgba(179, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+    background: var(--crimson-vibrant);
+    box-shadow: 0 0 50px var(--crimson-vibrant);
+}
+
+/* 8. Photo Collage Experience */
+#collage-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.collage-photo {
+    position: absolute;
+    width: 280px;
+    height: 380px;
+    object-fit: cover;
+    border: 8px solid var(--silk-white);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    opacity: 0;
+    transform: scale(0.8) rotate(var(--r));
+    transition: opacity 2s ease, transform 2s cubic-bezier(0.19, 1, 0.22, 1);
+    z-index: 1;
+}
+
+.collage-photo.active {
+    opacity: 1;
+    transform: scale(1) rotate(var(--r));
+}
+
+.collage-photo.exit {
+    opacity: 0;
+    transform: scale(1.1) rotate(var(--r)) translateY(-20px);
+}
+
+@media (max-width: 768px) {
+    .collage-photo {
+        width: 180px;
+        height: 250px;
+    }
+}

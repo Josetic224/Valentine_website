@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Masterpiece of Love</title>
+    <!-- Premium Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Outfit:wght@100;300;400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <!-- Background Experience -->
+    <canvas id="canvas-experience"></canvas>
+    <div id="overlay-gradient"></div>
+
+    <svg class="pulsing-heart" id="main-heart" viewBox="0 0 32 32">
+        <path
+            d="M16 28.5L14.3 26.9C8.3 21.4 4.3 17.8 4.3 13.5C4.3 10 7 7.3 10.5 7.3C12.5 7.3 14.4 8.2 15.7 9.8C17 8.2 18.9 7.3 20.9 7.3C24.4 7.3 27.2 10 27.2 13.5C27.2 17.8 23.2 21.4 17.2 26.9L15.7 28.5H16Z" />
+    </svg>
+
+    <!-- Entrance Sequence -->
+    <div id="intro-panel" class="glass-ui">
+        <div class="subtitle">My Dearest Elizabeth</div>
+        <h1>Into Our Forever</h1>
+        <p class="intro-text"
+            style="margin-bottom: 2.5rem; color: rgba(253, 245, 230, 0.75); font-weight: 300; letter-spacing: 1.5px; font-style: italic;">
+            Before we begin, take a deep breath and feel the rhythm of my heart. This journey is a celebration of every
+            second I've spent loving you.
+        </p>
+        <button class="btn-primary" onclick="startExperience()">Open Your Heart</button>
+    </div>
+
+    <!-- Poetry Experience -->
+    <div id="poetry-container">
+        <div class="lyric-line">In a world of billions...</div>
+        <div class="lyric-line">My heart only beats for one.</div>
+        <div class="lyric-line">You are my starlight, Elizabeth.</div>
+        <div class="lyric-line">My peace, my home, my forever.</div>
+    </div>
+
+    <!-- Photo Collage Experience -->
+    <div id="collage-container"></div>
+
+    <!-- Final Centerpiece -->
+    <div id="final-piece" class="glass-ui" style="display: none;">
+        <div class="subtitle">Eternal Devotion</div>
+        <div class="photo-container" style="margin-bottom: 1.5rem;">
+            <img src="elizabeth.jpg" alt="Vision of Beauty"
+                style="width: 150px; height: 150px; border-radius: 50%; border: 3px solid var(--crimson-vibrant); object-fit: cover; box-shadow: 0 0 40px var(--crimson-glow);">
+        </div>
+        <h1 id="love-name">Elizabeth</h1>
+        <p id="final-msg" style="margin-bottom: 2rem; color: rgba(253, 245, 230, 0.82); font-style: italic;">
+            "You are the light that never fades, the melody that never ends."
+        </p>
+        <div style="font-size: 2.5rem;">❦</div>
+    </div>
+
+    <!-- Audio Element -->
+    <audio id="background-music" loop>
+        <source src="lmly.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="masterpiece.js"></script>
+</body>
+
+</html>
