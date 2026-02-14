@@ -20,8 +20,22 @@ let isStarted = false;
 let collageStarted = false;
 
 const lizzyPhotos = [
+    "Lizzy/IMG-20250328-WA0015.jpg",
     "Lizzy/IMG-20250413-WA0070.jpg",
     "Lizzy/IMG-20250413-WA0072.jpg",
+    "Lizzy/IMG-20250720-WA0008.jpg",
+    "Lizzy/IMG-20250727-WA0031.jpg",
+    "Lizzy/IMG-20251018-WA0008.jpg",
+    "Lizzy/IMG-20251019-WA0010.jpg",
+    "Lizzy/IMG-20251019-WA0038.jpg",
+    "Lizzy/IMG-20251022-WA0014.jpg",
+    "Lizzy/IMG-20251029-WA0015.jpg",
+    "Lizzy/IMG-20251217-WA0150.jpg",
+    "Lizzy/IMG-20251219-WA0045.jpg",
+    "Lizzy/IMG-20251219-WA0062.jpg",
+    "Lizzy/IMG-20251228-WA0010.jpg",
+    "Lizzy/IMG-20251228-WA0011.jpg",
+    "Lizzy/IMG-20260107-WA0018.jpg",
     "Lizzy/IMG-20260121-WA0021.jpg",
     "Lizzy/IMG-20260121-WA0048.jpg",
     "Lizzy/IMG-20260121-WA0061.jpg",
@@ -291,7 +305,7 @@ function startCollage() {
         }
         spawnCollagePhoto(lizzyPhotos[idx]);
         idx++;
-    }, 4000); // Appear every 4 seconds
+    }, 2000); // Appear every 2 seconds
 }
 
 function spawnCollagePhoto(src) {
